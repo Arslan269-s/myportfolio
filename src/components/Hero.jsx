@@ -76,7 +76,7 @@ const Hero = () => {
                         </a>
                     </div>
                     <div className='w-12 h-12 flex items-center justify-center '>
-                        <a href=''> <img src={twiter} alt='twiter' className='w-6 h-6 transition-transform duration-300 hover:scale-125' />
+                        <a href="/image"> <img src={twiter} alt='twiter' className='w-6 h-6 transition-transform duration-300 hover:scale-125' />
                         </a>
                     </div>
                     <div className='w-12 h-12 flex items-center justify-center '>
@@ -98,7 +98,7 @@ const Hero = () => {
                 {/* Image */}
 
                 <div className='flex items-center justify-center'>
-                    <img src={myImage} className="w-96 h-96 rounded-xl shadow-lg object-cover z-10" alt="image section" />
+                    <img src={myImage} className="w-96 h-96 rounded-xl shadow-lg object-cover z-10" alt="image-section" />
                 </div>
 
             </div>

@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="flex gap-4 justify-center md:justify-start text-gray-400">
             <span><a href="https://github.com/Arslan269-s" target="blank">GitHub</a></span>
             <span><a href="https://www.linkedin.com/in/arslanhanif/" target="blank">LinkedIn</a></span>
-            <span><a href="">YouTube</a></span>
+            <span><a href="/youtube.com">YouTube</a></span>
           </div>
         </div>
       </div>

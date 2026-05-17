@@ -26,7 +26,7 @@ const Navbar = () => {
                         <a href="#skill" onClick={() => setOpen(false)}>Skill</a>
                         <a href="#project" onClick={() => setOpen(false)}>Projects</a>
                         <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-                        <a href=''>
+                        <a href='/'>
                             <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition">
                                 <a href="/MuhammadArslan.pdf" download>
                                     Download CV
