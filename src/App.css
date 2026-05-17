@@ -98,3 +98,25 @@ body {
   }
 
 }
+
+
+
+.typing{
+  width: 31ch;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+}
+
+@keyframes typing{
+  from{
+    width: 0;
+  }
+}
+
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+}

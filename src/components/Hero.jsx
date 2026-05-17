@@ -8,6 +8,22 @@ import github from "../assets/github.png"
 import { motion } from "framer-motion";
 
 
+import { TypeAnimation } from 'react-type-animation';
+
+<TypeAnimation
+  sequence={[
+    'Frontend Developer',
+    2000,
+    'React Developer',
+    2000,
+    'UI Designer',
+    2000,
+  ]}
+  speed={50}
+  repeat={Infinity}
+/>
+
+
 const Hero = () => {
 
     const [activeBtn, setActiveBtn] = useState("");
@@ -27,7 +43,7 @@ const Hero = () => {
                 <h1 className="text-5xl font-bold">Hi, I'm
                     <h1 className='text-[#6c5ce7]'>
                         Muhammad Arslan 👋 </h1></h1>
-                <h2 className="my-4 text-lg">
+                <h2 className="my-4 text-lg typing">
                     Frontend Developer | React | Tailwind
                 </h2>
 
