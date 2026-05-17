@@ -9,11 +9,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { motion } from "framer-motion";
+
+
 
 const MySkills = () => {
   return (
-    <section className="px-6 lg:px-[100px] text-white py-16">
-      <div className="">
+
+    <section id="skill" className="px-6 lg:px-[100px] text-white py-16">
+      <motion.div 
+      initial={{opacity: 0, y: 50}}
+      whileInView={{opacity: 1, y: 0}}
+      transition={{duration: 0.9}}
+      viewport={{once: false}}
+      
+      className="">
         <h2 className="text-3xl md:text-4xl font-bold mb-[20px] text-center">
           My <span className='text-[#6c5ce7]'> Skills</span>
         </h2>
@@ -41,7 +51,11 @@ const MySkills = () => {
             {skillsData.map((skill, index) => (
               <SwiperSlide key={index}>
 
-                <div className="bg-[#111b34] p-6 rounded-xl text-white">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-[#111b34] p-6 rounded-xl text-white">
 
                   {/* IMAGE */}
                   <div className="flex justify-center">
@@ -68,7 +82,7 @@ const MySkills = () => {
                     ></div>
                   </div>
 
-                </div>
+                </motion.div>
 
               </SwiperSlide>
             ))}
@@ -82,8 +96,9 @@ const MySkills = () => {
 
 
 
-      </div>
+      </motion.div>
     </section>
+
   )
 }
 

@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import myImage from "../assets/arslan3.png"
 import facebook from "../assets/facebook.jpg"
 import linkdin from "../assets/linkdin.png"
 import twiter from "../assets/twitter.png"
 import github from "../assets/github.png"
 
+import { motion } from "framer-motion";
+
+
 const Hero = () => {
+
+    const [activeBtn, setActiveBtn] = useState("");
+
     return (
-        <div className='px-6 lg:px-[100px] py-100 my-6 grid grid grid-cols-2'>
+
+
+        <motion.div initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+            id="hero"
+            className='px-6 lg:px-[100px] py-100 my-6 grid lg:grid-cols-2 pt-16'>
+
             <section className=" flex flex-col justify-center items-start text-white my-6 lg:my-0">
+
                 <h1 className="text-5xl font-bold">Hi, I'm
                     <h1 className='text-[#6c5ce7]'>
                         Muhammad Arslan 👋 </h1></h1>
@@ -21,13 +36,36 @@ const Hero = () => {
                     HTML, CSS, Javascript and modran framworks.
                 </p>
 
-                <div className='flex gap-5'>
-                    <button className="mt-6 px-6 py-3 bg-blue-600 rounded-lg hover:bg-gray-300">
-                        Hire Me
-                    </button>
-                    <button className="mt-6 px-6 py-3 bg-none border rounded-lg hover:bg-gray-300">
-                        View My Projecct
-                    </button>
+
+                <div className='flex gap-5 mt-5'>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.5 }} className={`px-4 py-2 rounded border transition 
+                            ${activeBtn === "live"
+                            ? "bg-blue-500 text-white"
+                            : "border-[#6c5ce7] text-white hover:bg-[#5a4bd6]"
+                        }`}
+                        onClick={() => setActiveBtn("live")}>
+                        <a
+                            href="https://www.xecutivedirect.com/"
+                            target="_blank"
+                            rel="noreferrer">
+
+                            Live Demo
+
+                        </a>
+                    </motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.5 }} className={`px-4 py-2 rounded border transition
+                                ${activeBtn === "github"
+                            ? "bg-blue-500 text-white"
+                            : "border-[#6c5ce7] hover:bg-[#6c5ce7] hover:text-white"
+                        }`}
+                        onClick={() => setActiveBtn("github")}>
+                        <a
+                            href="https://github.com/Arslan269-s"
+                            target="_blank"
+                            rel="noreferrer">
+                            Github
+                        </a>
+                    </motion.button>
                 </div>
                 <div className='flex justify-between gap-6 my-5'>
                     <div className='w-12 h-12 flex items-center justify-center '>
@@ -47,7 +85,7 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-       
+
 
             <div className="relative flex justify-center items-end">
 
@@ -58,14 +96,17 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] bg-[size:20px_20px]"></div>
 
                 {/* Image */}
-               
+
                 <div className='flex items-center justify-center'>
-                <img src={myImage} className="w-96 h-96 rounded-xl shadow-lg object-cover z-10" alt="image section" />
-            </div> 
+                    <img src={myImage} className="w-96 h-96 rounded-xl shadow-lg object-cover z-10" alt="image section" />
+                </div>
 
             </div>
 
-        </div>
+            {/* </div> */}
+        </motion.div>
+
+
     )
 }
 

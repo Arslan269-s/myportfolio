@@ -5,6 +5,7 @@ import MySkills from './components/MySkills';
 import Navbar from './components/Navbar';
 import MyProject from './components/MyProject';
 import ContactMe from './components/ContactMe'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
      <MySkills />
      <MyProject />
      <ContactMe />
+     <Footer />
     </div>
   );
 }

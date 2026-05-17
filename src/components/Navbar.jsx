@@ -1,32 +1,39 @@
-import React from 'react'
+import { useState } from "react";
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
     return (
         <div>
 
-            <nav className="bg-navbar text-white px-6 lg:px-[100px] py-4 flex justify-between items-center shadow-md">
+            <nav className="navbar px-6 lg:px-[100px] py-4 w-full bg-navbar">
 
                 {/* Logo */}
-                <h1 className="text-2xl font-bold tracking-wide">
-                    Arslan
-                </h1>
+                <div className=''>
+                    <h1 className="text-2xl font-bold tracking-wide">
+                        <a href='/'> Arslan</a>
+                    </h1>
+                </div>
+                <div className="menu-btn"
+                onClick={() => setOpen(!open)}
+                >
+                    {open ? "✖" : "☰"}
+                </div>
 
                 {/* Menu */}
-                <div className=''>
-                    <ul className="hidden md:flex gap-8 text-sm font-medium flex items-center">
-                        <li className="hover:text-gray-400 cursor-pointer">Home</li>
-                        <li className="hover:text-gray-400 cursor-pointer">About</li>
-                        <li className="hover:text-gray-400 cursor-pointer">Skill</li>
-                        <li className="hover:text-gray-400 cursor-pointer">Projects</li>
-                        <li className="hover:text-gray-400 cursor-pointer">Contact</li>
-                        <li>
+                <div className={`nav-links ${open ? "active" : ""}`}>
+                        <a href="#hero" onClick={() => setOpen(false)} >Home</a>
+                        <a href="#about" onClick={() => setOpen(false)}>About</a>
+                        <a href="#skill" onClick={() => setOpen(false)}>Skill</a>
+                        <a href="#project" onClick={() => setOpen(false)}>Projects</a>
+                        <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+                        <a href=''>
                             <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition">
-                                Download CV
+                                <a href="/MuhammadArslan.pdf" download>
+                                    Download CV
+                                </a>
                             </button>
-                        </li>
-                    </ul>
-
-
+                        </a>
+                    
                 </div>
 
             </nav>

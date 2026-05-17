@@ -3,14 +3,18 @@ import image2 from "../assets/about.png"
 import { MdOutlineMail } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+import {motion} from "framer-motion";
 
 
 
 
 const About = () => {
   return (
-    <section className="bg-about text-white py-100 px-6 lg:px-[100px]">
-      <div className="flex flex-col md:flex-row items-center gap-10">
+    <section id="about" className="bg-about text-white py-100 px-6 lg:px-[100px]">
+      <motion.div initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }} className="flex flex-col md:flex-row items-center gap-10">
 
         {/* Left Image */}
         <div className="flex-1 items-center justify-center">
@@ -22,7 +26,7 @@ const About = () => {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1">
+        <div className="flex-1 px-6 lg:px-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About <span className='text-[#6c5ce7]'> Me</span>
           </h2>
@@ -63,7 +67,7 @@ const About = () => {
           
         </div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }
